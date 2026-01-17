@@ -124,7 +124,7 @@ export const Footer = () => {
                             <h4 className="text-[#FEFDFA] font-bold mb-6 text-sm uppercase tracking-widest">Contato</h4>
                             <ul className="space-y-4 text-[#FEFDFA]/40 text-sm">
                                 <li><a href="mailto:contato@zaeom.com" className="hover:text-[#39F265] transition-colors">contato@zaeom.com</a></li>
-                                <li><a href={getWhatsappLink(WHATSAPP_MESSAGES.GENERAL)} target="_blank" rel="noopener noreferrer" className="hover:text-[#39F265] transition-colors">+55 (11) 9999-9999</a></li>
+                                <li><a href={getWhatsappLink(WHATSAPP_MESSAGES.GENERAL)} target="_blank" rel="noopener noreferrer" className="hover:text-[#39F265] transition-colors">+55 (48) 99908-5144</a></li>
                             </ul>
                         </div>
                     </div>

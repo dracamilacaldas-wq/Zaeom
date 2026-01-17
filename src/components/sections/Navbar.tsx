@@ -52,7 +52,7 @@ export const Navbar = () => {
     ]
 
     return (
-        <div className="fixed top-0 left-0 w-full z-[100]">
+        <div className="fixed top-0 left-0 w-full z-[100] overflow-x-hidden">
             {/* Desktop Navbar - Glass Morphing */}
             <div className="hidden lg:flex w-full justify-center px-6 py-8 pointer-events-none">
                 <motion.nav
@@ -125,14 +125,14 @@ export const Navbar = () => {
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="fixed inset-0 z-[105] bg-[#080808] lg:hidden flex flex-col p-6 pt-20 overflow-y-auto"
+                        initial={{ opacity: 0, x: "100%" }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: "100%" }}
+                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                        className="fixed inset-0 z-[105] bg-[#080808]/98 backdrop-blur-xl lg:hidden flex flex-col p-6 pt-24 overflow-y-auto"
                     >
 
-                        <div className="relative z-10 space-y-6">
+                        <div className="relative z-10 space-y-4">
                             {navItems.map((item, i) => (
                                 <motion.a
                                     key={item.name}
@@ -141,17 +141,17 @@ export const Navbar = () => {
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.2, delay: i * 0.05 }}
-                                    className="flex items-center justify-between group py-2"
+                                    className="flex items-center justify-between group py-1.5 border-b border-white/[0.03]"
                                 >
-                                    <span className="text-xl sm:text-3xl font-black text-[#FEFDFA] uppercase tracking-tighter group-hover:text-[#39F265] transition-colors">
+                                    <span className="text-lg sm:text-2xl font-black text-[#FEFDFA] uppercase tracking-tighter group-hover:text-[#39F265] transition-colors">
                                         {item.name}
                                     </span>
-                                    <ChevronRight className="w-5 h-5 sm:w-8 sm:h-8 text-[#39F265] opacity-50 block group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0" />
+                                    <ChevronRight className="w-5 h-5 text-[#39F265] opacity-50 block group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                                 </motion.a>
                             ))}
                         </div>
 
-                        <div className="mt-auto relative z-10">
+                        <div className="mt-12 mb-8 relative z-10">
                             <CTAButton
                                 href={getWhatsappLink(WHATSAPP_MESSAGES.PROTOCOL)}
                                 onClick={() => setIsMenuOpen(false)}
@@ -160,7 +160,7 @@ export const Navbar = () => {
                                 Agendar Diagnóstico
                             </CTAButton>
                         </div>
-                        <p className="text-center mt-8 text-[9px] font-bold text-[#FEFDFA]/20 uppercase tracking-[0.5em]">
+                        <p className="text-center text-[8px] font-bold text-[#FEFDFA]/20 uppercase tracking-[0.5em] pb-10">
                             PROTOCOLO ZAEOM Z-01
                         </p>
                     </motion.div>

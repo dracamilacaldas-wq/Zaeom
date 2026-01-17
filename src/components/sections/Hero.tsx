@@ -117,14 +117,14 @@ export const Hero = () => {
                         <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#FEFDFA]/40 whitespace-nowrap">V. 2026</span>
                     </div>
 
-                    <h1 className="text-[2.5rem] xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] 2xl:text-[7.5rem] font-bold md:font-black mb-6 md:mb-10 max-w-6xl mx-auto px-4 text-balance leading-[1.1] md:leading-[0.9] tracking-[-0.02em] md:tracking-[-0.04em] text-[#FEFDFA]">
+                    <h1 className="text-[2.2rem] xs:text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] 2xl:text-[7.5rem] font-bold md:font-black mb-6 md:mb-10 max-w-6xl mx-auto px-2 sm:px-4 text-balance leading-[1.1] md:leading-[0.9] tracking-[-0.05em] md:tracking-[-0.04em] text-[#FEFDFA]">
                         {"Sua Empresa no".split(" ").map((word, i) => (
                             <motion.span
                                 key={i}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                                className="inline-block mr-[0.2em]"
+                                className="inline-block mr-[0.15em]"
                             >
                                 {word}
                             </motion.span>
@@ -133,7 +133,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, filter: "blur(10px)" }}
                             animate={{ opacity: 1, filter: "blur(0px)" }}
                             transition={{ duration: 1.2, delay: 0.5 }}
-                            className="text-gradient block"
+                            className="text-gradient block mt-1"
                         >
                             Piloto Automático
                         </motion.span>
