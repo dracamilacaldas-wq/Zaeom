@@ -52,9 +52,9 @@ export const Navbar = () => {
     ]
 
     return (
-        <div className="fixed top-0 left-0 w-full z-[100] overflow-x-hidden">
+        <div className="fixed top-0 inset-x-0 z-[100] overflow-x-hidden">
             {/* Desktop Navbar - Glass Morphing */}
-            <div className="hidden lg:flex w-full justify-center px-6 py-8 pointer-events-none">
+            <div className="hidden lg:flex inset-x-0 justify-center px-6 py-8 pointer-events-none">
                 <motion.nav
                     style={{ opacity, y, scale }}
                     className="pointer-events-auto"
@@ -90,8 +90,8 @@ export const Navbar = () => {
             </div>
 
             {/* Mobile Header - Always Fixed & Visible */}
-            <div className={`lg:hidden w-full transition-all duration-300 px-6 py-4 flex items-center justify-between relative z-[110] ${isScrolled || isMenuOpen ? 'bg-[#080808]/95 backdrop-blur-md border-b border-white/5' : ''}`}>
-                <img src={logoZaeom} alt="Zaeom Logo" className="h-7 w-auto" />
+            <div className={`lg:hidden inset-x-0 transition-all duration-300 px-6 py-4 flex items-center justify-between relative z-[110] ${isScrolled || isMenuOpen ? 'bg-[#080808]/95 backdrop-blur-md border-b border-white/5' : ''}`}>
+                <img src={logoZaeom} alt="Zaeom Logo" className="h-6 w-auto" />
 
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,7 +129,7 @@ export const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: "100%" }}
                         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="fixed inset-0 z-[105] bg-[#080808]/98 backdrop-blur-xl lg:hidden flex flex-col p-6 pt-24 overflow-y-auto"
+                        className="fixed inset-0 z-[105] bg-[#080808]/98 backdrop-blur-xl lg:hidden flex flex-col p-6 pt-20 overflow-y-auto"
                     >
 
                         <div className="relative z-10 space-y-4">
@@ -143,7 +143,7 @@ export const Navbar = () => {
                                     transition={{ duration: 0.2, delay: i * 0.05 }}
                                     className="flex items-center justify-between group py-1.5 border-b border-white/[0.03]"
                                 >
-                                    <span className="text-lg sm:text-2xl font-black text-[#FEFDFA] uppercase tracking-tighter group-hover:text-[#39F265] transition-colors">
+                                    <span className="text-base sm:text-2xl font-black text-[#FEFDFA] uppercase tracking-tighter group-hover:text-[#39F265] transition-colors">
                                         {item.name}
                                     </span>
                                     <ChevronRight className="w-5 h-5 text-[#39F265] opacity-50 block group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
@@ -151,7 +151,7 @@ export const Navbar = () => {
                             ))}
                         </div>
 
-                        <div className="mt-12 mb-8 relative z-10">
+                        <div className="mt-8 mb-6 relative z-10">
                             <CTAButton
                                 href={getWhatsappLink(WHATSAPP_MESSAGES.PROTOCOL)}
                                 onClick={() => setIsMenuOpen(false)}
@@ -160,7 +160,7 @@ export const Navbar = () => {
                                 Agendar Diagnóstico
                             </CTAButton>
                         </div>
-                        <p className="text-center text-[8px] font-bold text-[#FEFDFA]/20 uppercase tracking-[0.5em] pb-10">
+                        <p className="text-center text-[8px] font-bold text-[#FEFDFA]/20 uppercase tracking-[0.5em] pb-8">
                             PROTOCOLO ZAEOM Z-01
                         </p>
                     </motion.div>

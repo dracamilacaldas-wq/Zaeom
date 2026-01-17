@@ -46,7 +46,7 @@ function App() {
   }, [])
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-x-hidden">
       {/* Aesthetic Overlays */}
       <div className="grain" />
       <div className="mesh-gradient" />
